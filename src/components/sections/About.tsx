@@ -6,8 +6,8 @@ const About = () => {
         <section id="about" className="py-4 sm:py-16 px-4 bg-white relative w-screen overflow-x-clip">
             <Blur className="hidden sm:flex absolute top-0 -left-[55%] bg-secondary" />
             <Blur className="hidden sm:flex absolute bottom-0  bg-secondary -right-[45%]" />
-            <div className="mx-auto">
-                <div className="my-4 sm:my-20">
+            <div className="mx-auto max-w-[1440px] flex flex-col items-center">
+                <div className="my-4 sm:my-20 w-full">
                     <h2 className="text-3xl md:text-4xl font-extrabold text-primary">Why Choose Our Cocoa</h2>
                     <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6 items-center w-max">
                         <div className="flex items-center gap-4">
