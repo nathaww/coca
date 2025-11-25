@@ -19,7 +19,7 @@ const Landing = () => {
             <p className='sm:text-xl text-center'>Sourced with integrity. Delivered with care. Experience cocoa in its truest form.</p>
             <Button text='Explore Our Products' className='text-white border rounded-lg border-white mt-8'/>
         </div>
-        <img src="/images/cocoa.svg" alt="Cocoa illustration" className="hidden sm:block absolute right-28 -bottom-[30%] w-[700px] object-contain z-10" />
+        <img src="/images/cocoa.svg" alt="Cocoa illustration" className="smooth-loop hidden sm:block absolute right-28 -bottom-[30%] w-[700px] object-contain z-10" />
       <Swiper
         modules={[Parallax, Navigation, Autoplay, EffectFade]}
         effect="fade"
