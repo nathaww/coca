@@ -3,6 +3,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Button from '../ui/Button'
 import Circle from '../ui/Circle'
+import { ArrowUpRight } from 'lucide-react'
 
 const Featured = () => {
     const containerRef = useRef<HTMLDivElement | null>(null)
@@ -63,7 +64,7 @@ const Featured = () => {
 
                             <div className="flex justify-end w-full 2xl:w-auto">
                                 <button className="bg-secondary text-white p-3 rounded-lg w-full 2xl:w-max">
-                                    Learn More
+                                  <ArrowUpRight/>
                                 </button>
                             </div>
                         </div>

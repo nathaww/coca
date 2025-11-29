@@ -50,8 +50,8 @@ const Contact = () => {
                 <div className="border-t mx-auto border-white/30 bg-primary w-full max-w-[1440px] text-white">
                     <div className="flex flex-col lg:flex-row mx-auto px-4 py-6 gap-3 items-center justify-between">
                         <nav className="flex items-center gap-8">
-                            <a className="opacity-90 hover:opacity-100" href="#home">Home</a>
-                            <a className="opacity-90 hover:opacity-100" href="#about">About Us</a>
+                            <a className="font-semibold" href="/">Home</a>
+                            <a className="opacity-90 hover:opacity-100" href="/about">About Us</a>
                             <a className="opacity-90 hover:opacity-100" href="#products">Products</a>
                             <a className="opacity-90 hover:opacity-100" href="#contact">Contact us</a>
                         </nav>

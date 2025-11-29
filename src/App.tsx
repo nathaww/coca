@@ -6,6 +6,7 @@ import Landing from './components/sections/Landing'
 import About from './components/sections/About'
 import Featured from './components/sections/Featured'
 import Contact from './components/sections/Contact'
+import AboutUsPage from './components/pages/AboutUsPage'
 
 function Home() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutUsPage />} />
       </Routes>
       <Footer />
     </div>

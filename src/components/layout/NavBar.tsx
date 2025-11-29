@@ -17,14 +17,14 @@ const NavBar = () => {
         }
     }, [open])
 
-    const links = [
-        { label: 'Home', href: '#home' },
-        { label: 'About Us', href: '#about' },
-        { label: 'Products', href: '#products' },
-        { label: 'Contact Us', href: '#contact' },
-    ]
+  const links = [
+    { label: 'Home', href: '/' },
+    { label: 'About Us', href: '/about' },
+    { label: 'Products', href: '#products' },
+    { label: 'Contact Us', href: '#contact' },
+  ]
 
-    return (
+  return (
         <div className="absolute top-0 z-50 max-w-[1440px] w-full flex items-center justify-between p-4">
             <img src="/images/logo.svg" alt="Cocoa Logo" className="w-28 sm:w-[251px] sm:h-[100px] object-contain z-50" />
 
