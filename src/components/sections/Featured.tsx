@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Button from '../ui/Button'
@@ -33,9 +34,9 @@ const Featured = () => {
     }, [])
 
     const products = [
-        { title: 'Fermented Cocoa Beans', desc: 'Deeply aromatic and perfect for fine chocolate production.', img: '/images/fermented.svg' },
-        { title: 'Raw Cocoa Nibs', desc: 'Crunchy, nutrient-dense, and rich in antioxidants.', img: '/images/raw.svg' },
-        { title: 'Cocoa Husk', desc: 'Ideal for brewing cocoa tea or natural infusions.', img: '/images/husk.svg' },
+        { title: 'Fermented Cocoa Beans', desc: 'Deeply aromatic and perfect for fine chocolate production.', img: '/images/fermented.svg', slug: 'fermented-cocoa-beans' },
+        { title: 'Raw Cocoa Nibs', desc: 'Crunchy, nutrient-dense, and rich in antioxidants.', img: '/images/raw.svg', slug: 'raw-cocoa-nibs' },
+        { title: 'Cocoa Husk', desc: 'Ideal for brewing cocoa tea or natural infusions.', img: '/images/husk.svg', slug: 'cocoa-husk' },
     ]
 
     return (
@@ -63,9 +64,11 @@ const Featured = () => {
                             </div>
 
                             <div className="flex justify-end w-full 2xl:w-auto">
-                                <button className="bg-secondary text-white p-3 rounded-lg w-full 2xl:w-max">
-                                  <ArrowUpRight/>
-                                </button>
+                                <Link to={`/products/${p.slug}`}>
+                                    <button className="bg-secondary text-white p-3 rounded-lg w-full 2xl:w-max hover:bg-secondary/90 transition-colors">
+                                      <ArrowUpRight/>
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </article>

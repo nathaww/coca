@@ -7,6 +7,7 @@ import About from './components/sections/About'
 import Featured from './components/sections/Featured'
 import Contact from './components/sections/Contact'
 import AboutUsPage from './components/pages/AboutUsPage'
+import ProductPage from './components/pages/ProductPage'
 
 function Home() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUsPage />} />
+        <Route path="/products/:productId" element={<ProductPage />} />
       </Routes>
       <Footer />
     </div>
