@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Info } from 'lucide-react'
 
-const FORM_ENDPOINT = 'https://formsubmit.co/ajax/solomonnathan065@gmail.com'
+const WEB3FORMS_ACCESS_KEY = '57c1ab62-d9f8-40ec-8784-e5b0a2ddd506'
 
 const beanTypes = {
     GF: {
@@ -52,29 +52,52 @@ export default function GetQuote() {
 
         setStatus('sending')
 
-        const formData = new FormData()
-        formData.append('Metric Tons', String(metricTons))
-        formData.append('Frequency', frequency)
-        formData.append('Bean Type', beanTypes[beanType].label)
-        formData.append('Email', email)
-        formData.append('Name', name)
-
         try {
-            const res = await fetch(FORM_ENDPOINT, {
+            const res = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                body: formData,
                 headers: {
+                    'Content-Type': 'application/json',
                     Accept: 'application/json',
                 },
+                body: JSON.stringify({
+                    access_key: WEB3FORMS_ACCESS_KEY,
+                    subject: 'New Quote Request from Cocoa Website',
+                    from_name: name || 'Website Visitor',
+                    email: email,
+                    message: `New Quote Request:
+
+Bean Type: ${beanTypes[beanType].label}
+Metric Tons: ${metricTons}
+Frequency: ${frequency}
+Customer Name: ${name || 'Not provided'}
+Customer Email: ${email}
+
+Please respond to this quote request.`,
+                    // Additional fields for better organization
+                    bean_type: beanTypes[beanType].label,
+                    metric_tons: metricTons,
+                    frequency: frequency,
+                    customer_name: name || 'Not provided',
+                    customer_email: email,
+                }),
             })
 
-            if (res.ok) {
+            const data = await res.json()
+
+            if (data.success) {
                 setStatus('success')
+                // Reset form
+                setMetricTons('')
+                setFrequency('monthly')
+                setBeanType('GF')
+                setEmail('')
+                setName('')
             } else {
+                console.error('Form submission error:', data)
                 setStatus('error')
             }
         } catch (err) {
-            console.log(err)
+            console.error('Network error:', err)
             setStatus('error')
         }
     }
@@ -109,7 +132,7 @@ export default function GetQuote() {
                                             className="relative p-1 text-gray-400 hover:text-secondary transition-colors"
                                         >
                                             <Info className="w-5 h-5" />
-                                            
+
                                             {/* Tooltip */}
                                             {showTooltip === type && (
                                                 <div className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 bg-primary border-gray-700 border text-white text-xs rounded-lg shadow-xl p-4">
