@@ -302,7 +302,7 @@ const ProductPage = () => {
             </div>
 
             {/* Hero Section */}
-            <section className="relative py-12 px-4 overflow-hidden">
+            <section className="relative pb-6 px-4 overflow-hidden">
 
                 <div ref={heroRef} className="max-w-6xl mx-auto relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
