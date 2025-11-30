@@ -65,7 +65,7 @@ const Featured = () => {
 
                             <div className="flex justify-end w-full 2xl:w-auto">
                                 <Link to={`/products/${p.slug}`}>
-                                    <button className="bg-secondary text-white p-3 rounded-lg w-full 2xl:w-max hover:bg-secondary/90 transition-colors">
+                                    <button className="bg-secondary text-white p-3 cursor-pointer rounded-lg w-full 2xl:w-max hover:bg-secondary/90 transition-colors">
                                       <ArrowUpRight/>
                                     </button>
                                 </Link>
