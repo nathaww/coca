@@ -4,6 +4,7 @@ import { ArrowLeft, Award, Check, Leaf, Package, ShieldCheck } from 'lucide-reac
 import { useEffect, useRef } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Button from '../ui/Button'
+import SEO from '../lib/SEO'
 
 interface ProductData {
     id: string
@@ -281,6 +282,11 @@ const ProductPage = () => {
     if (!product) {
         return (
             <div className="min-h-screen flex items-center justify-center">
+                <SEO 
+                    title="Product Not Found | SWB Enterprises"
+                    description="The requested cocoa product was not found. Browse our range of premium cocoa beans, raw nibs, and cocoa husk."
+                    canonicalUrl="https://yourdomain.com/"
+                />
                 <div className="text-center">
                     <h1 className="text-4xl font-bold text-white mb-4">Product Not Found</h1>
                     <Link to="/#products">
@@ -291,8 +297,36 @@ const ProductPage = () => {
         )
     }
 
+    const seoData = {
+        'fermented-cocoa-beans': {
+            title: 'Premium Fermented Cocoa Beans | G2 Grade GF & FF | SWB Enterprises',
+            description: 'Buy premium fermented cocoa beans from Ecuador, Ghana, and Madagascar. G2 grade (GF & FF) beans perfect for fine chocolate production. 95-127+ beans per 100g, 8% moisture, organically certified.',
+            keywords: 'fermented cocoa beans, G2 cocoa beans, GF beans, FF beans, premium cocoa, single origin cocoa, chocolate making beans, Ecuador cocoa, Ghana cocoa, Madagascar cocoa, organic cocoa beans'
+        },
+        'raw-cocoa-nibs': {
+            title: 'Raw Cocoa Nibs | Organic Superfood | Antioxidant-Rich | SWB Enterprises',
+            description: 'Premium raw cocoa nibs from Peru, Ecuador, and Madagascar. 100% pure, unroasted cocoa superfood packed with antioxidants. Perfect for smoothies, baking, and health foods. Vacuum-sealed freshness.',
+            keywords: 'raw cocoa nibs, organic cocoa nibs, superfood cocoa, antioxidant cocoa, unroasted cocoa, cocoa nibs bulk, Peru cocoa nibs, health food ingredient, crunchy cocoa'
+        },
+        'cocoa-husk': {
+            title: 'Cocoa Husk for Tea & Infusions | Sustainable Cocoa By-Product | SWB',
+            description: 'Premium food-grade cocoa husk from Ghana, Ivory Coast, and Ecuador. Ideal for cocoa tea brewing, natural infusions, and sustainable applications. Aromatic, eco-friendly, zero-waste ingredient.',
+            keywords: 'cocoa husk, cocoa shell tea, cocoa tea, sustainable cocoa, eco-friendly cocoa, cocoa infusion, cocoa by-product, zero waste cocoa, natural tea'
+        }
+    }
+
+    const currentSEO = seoData[product.id as keyof typeof seoData]
+
     return (
-        <div className="min-h-screen bg-primary w-full pt-42">
+        <div className="min-h-screen bg-white pt-24">
+            <SEO 
+                title={currentSEO.title}
+                description={currentSEO.description}
+                keywords={currentSEO.keywords}
+                ogImage={`https://yourdomain.com${product.heroImage}`}
+                ogType="product"
+                canonicalUrl={`https://yourdomain.com/products/${product.id}`}
+            />
             {/* Breadcrumb */}
             <div className="max-w-6xl mx-auto px-4 py-4">
                 <Link to="/#products" className="inline-flex items-center gap-2 text-secondary hover:text-white transition-colors">

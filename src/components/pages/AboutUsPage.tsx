@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Button from '../ui/Button'
+import SEO from '../lib/SEO'
 
 const AboutUsPage = () => {
     const heroRef = useRef<HTMLDivElement | null>(null)
@@ -84,7 +85,14 @@ const AboutUsPage = () => {
     ]
 
     return (
-        <div className="min-h-screen bg-white w-screen">
+        <div className="min-h-screen bg-white">
+            <SEO 
+                title="About Us | Premium Cocoa Supplier Since 1998 | SWB Enterprises"
+                description="Learn about SWB Enterprises' 25+ years of excellence in cocoa sourcing. We partner with 150+ farms globally, delivering premium single-origin cocoa with 99.9% quality assurance."
+                keywords="about cocoa supplier, ethical cocoa sourcing, sustainable cocoa, cocoa company history, fair trade cocoa beans, organic cocoa supplier"
+                ogImage="https://yourdomain.com/images/aboutBg.png"
+                canonicalUrl="https://yourdomain.com/about"
+            />
             {/* Hero Section */}
             <section className="relative pb-20 pt-42 px-4 bg-primary overflow-hidden w-full h-full">
                 <div ref={heroRef} className="max-w-6xl mx-auto text-center relative z-10">

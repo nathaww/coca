@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://yourdomain.com/</loc>
+    <lastmod>2025-11-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://yourdomain.com/images/2.jpg</image:loc>
+      <image:title>Premium Cocoa Beans</image:title>
+      <image:caption>High-quality single-origin cocoa beans</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- About Us Page -->
+  <url>
+    <loc>https://yourdomain.com/about</loc>
+    <lastmod>2025-11-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://yourdomain.com/images/aboutBg.png</image:loc>
+      <image:title>About SWB Enterprises</image:title>
+      <image:caption>Our story and commitment to quality cocoa</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Products Section -->
+  <url>
+    <loc>https://yourdomain.com/#products</loc>
+    <lastmod>2025-11-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Fermented Cocoa Beans Product -->
+  <url>
+    <loc>https://yourdomain.com/products/fermented-cocoa-beans</loc>
+    <lastmod>2025-11-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://yourdomain.com/images/fermented.svg</image:loc>
+      <image:title>Fermented Cocoa Beans</image:title>
+      <image:caption>Premium fermented cocoa beans for chocolate production</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://yourdomain.com/images/aboutBg.png</image:loc>
+      <image:title>Fermented Cocoa Beans Product</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Raw Cocoa Nibs Product -->
+  <url>
+    <loc>https://yourdomain.com/products/raw-cocoa-nibs</loc>
+    <lastmod>2025-11-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://yourdomain.com/images/raw.svg</image:loc>
+      <image:title>Raw Cocoa Nibs</image:title>
+      <image:caption>Nutrient-dense raw cocoa nibs superfood</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://yourdomain.com/images/aboutBg2.png</image:loc>
+      <image:title>Raw Cocoa Nibs Product</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Cocoa Husk Product -->
+  <url>
+    <loc>https://yourdomain.com/products/cocoa-husk</loc>
+    <lastmod>2025-11-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://yourdomain.com/images/husk.svg</image:loc>
+      <image:title>Cocoa Husk</image:title>
+      <image:caption>Sustainable cocoa husk for tea and infusions</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://yourdomain.com/images/2.jpg</image:loc>
+      <image:title>Cocoa Husk Product</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Contact Section -->
+  <url>
+    <loc>https://yourdomain.com/#contact</loc>
+    <lastmod>2025-11-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Get Quote Section -->
+  <url>
+    <loc>https://yourdomain.com/#get-quote</loc>
+    <lastmod>2025-11-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+</urlset>

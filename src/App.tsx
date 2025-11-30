@@ -8,10 +8,18 @@ import Featured from './components/sections/Featured'
 import Contact from './components/sections/Contact'
 import AboutUsPage from './components/pages/AboutUsPage'
 import ProductPage from './components/pages/ProductPage'
+import SEO from './components/lib/SEO'
 
 function Home() {
   return (
     <>
+      <SEO 
+        title="Premium Cocoa Beans Supplier | Fermented, Raw Nibs & Cocoa Husk | SWB Enterprises"
+        description="Leading supplier of premium single-origin cocoa beans, raw cocoa nibs, and cocoa husk. Ethically sourced, sustainably processed cocoa products for chocolate makers and food manufacturers worldwide."
+        keywords="cocoa beans, fermented cocoa beans, raw cocoa nibs, cocoa husk, premium cocoa supplier, single origin cocoa, organic cocoa, fair trade cocoa, chocolate making supplies, bulk cocoa beans, G2 cocoa beans, GF beans, FF beans"
+        ogImage="https://yourdomain.com/images/2.jpg"
+        canonicalUrl="https://yourdomain.com/"
+      />
       <Landing />
       <About />
       <Featured />
