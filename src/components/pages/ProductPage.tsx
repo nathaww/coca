@@ -3,8 +3,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowLeft, Award, Check, Leaf, Package, ShieldCheck } from 'lucide-react'
 import { useEffect, useRef } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import Button from '../ui/Button'
 import SEO from '../lib/SEO'
+import Button from '../ui/Button'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 interface ProductData {
     id: string
@@ -232,6 +233,8 @@ const ProductPage = () => {
     const galleryRef = useRef<HTMLDivElement | null>(null)
 
     const product = productId ? productsData[productId] : null
+    const navigate = useNavigate()
+    const location = useLocation()
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger)
@@ -318,7 +321,7 @@ const ProductPage = () => {
     const currentSEO = seoData[product.id as keyof typeof seoData]
 
     return (
-        <div className="min-h-screen bg-white pt-24">
+        <div className="min-h-screen bg-primary pt-42 w-full">
             <SEO 
                 title={currentSEO.title}
                 description={currentSEO.description}
@@ -328,7 +331,7 @@ const ProductPage = () => {
                 canonicalUrl={`https://yourdomain.com/products/${product.id}`}
             />
             {/* Breadcrumb */}
-            <div className="max-w-6xl mx-auto px-4 py-4">
+            <div className="max-w-6xl mx-auto px-4">
                 <Link to="/#products" className="inline-flex items-center gap-2 text-secondary hover:text-white transition-colors">
                     <ArrowLeft className="w-4 h-4" />
                     <span className="font-medium">Back to Products</span>
@@ -463,8 +466,25 @@ const ProductPage = () => {
                     <p className="text-xl mb-8 opacity-90">
                         Contact our team to discuss quantities, pricing, and delivery options for your specific needs.
                     </p>
+                    {/* Get Quote CTA (works with BrowserRouter) */}
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button text="Get a Quote" className='border-white border rounded-lg' />
+                        <button
+                            onClick={() => {
+                                if (location.pathname === '/') {
+                                    const el = document.getElementById('get-quote')
+                                    if (el) el.scrollIntoView({ behavior: 'smooth' })
+                                } else {
+                                    navigate('/')
+                                    setTimeout(() => {
+                                        const el = document.getElementById('get-quote')
+                                        if (el) el.scrollIntoView({ behavior: 'smooth' })
+                                    }, 150)
+                                }
+                            }}
+                            className="border-white border rounded-lg"
+                        >
+                            <Button text="Get a Quote" className="border-white border rounded-lg" />
+                        </button>
                     </div>
                 </div>
             </section>
