@@ -85,7 +85,7 @@ const AboutUsPage = () => {
     ]
 
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white w-full">
             <SEO 
                 title="About Us | Premium Cocoa Supplier Since 1998 | SWB Enterprises"
                 description="Learn about SWB Enterprises' 25+ years of excellence in cocoa sourcing. We partner with 150+ farms globally, delivering premium single-origin cocoa with 99.9% quality assurance."
