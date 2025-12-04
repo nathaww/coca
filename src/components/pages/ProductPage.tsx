@@ -53,7 +53,7 @@ const productsData: Record<string, ProductData> = {
             'Sustainably sourced from certified organic farms'
         ],
         specifications: {
-            origin: 'Ecuador, Ghana, Madagascar',
+            origin: 'Ivory Coast',
             processing: 'Traditional 5-7 day fermentation',
             moisture: '6-7%',
             purity: '99.9% pure cocoa',
@@ -115,7 +115,7 @@ const productsData: Record<string, ProductData> = {
             'Versatile ingredient for both sweet and savory dishes'
         ],
         specifications: {
-            origin: 'Peru, Ecuador, Madagascar',
+            origin: 'Ivory Coast',
             processing: 'Cold-pressed, minimal processing',
             moisture: '4-5%',
             purity: '100% pure cocoa nibs',
@@ -178,7 +178,7 @@ const productsData: Record<string, ProductData> = {
             'Unique flavor profile for innovative products'
         ],
         specifications: {
-            origin: 'Ghana, Ivory Coast, Ecuador',
+            origin: 'Ivory Coast',
             processing: 'Cleaned, dried, and sorted',
             moisture: '8-10%',
             purity: 'Food-grade, contaminant-free',
@@ -303,17 +303,17 @@ const ProductPage = () => {
     const seoData = {
         'fermented-cocoa-beans': {
             title: 'Premium Fermented Cocoa Beans | G2 Grade GF & FF | SWB Enterprises',
-            description: 'Buy premium fermented cocoa beans from Ecuador, Ghana, and Madagascar. G2 grade (GF & FF) beans perfect for fine chocolate production. 95-127+ beans per 100g, 8% moisture, organically certified.',
-            keywords: 'fermented cocoa beans, G2 cocoa beans, GF beans, FF beans, premium cocoa, single origin cocoa, chocolate making beans, Ecuador cocoa, Ghana cocoa, Madagascar cocoa, organic cocoa beans'
+            description: 'Buy premium fermented cocoa beans from Ivory Coast. G2 grade (GF & FF) beans perfect for fine chocolate production. 95-127+ beans per 100g, 8% moisture, organically certified.',
+            keywords: 'fermented cocoa beans, G2 cocoa beans, GF beans, FF beans, premium cocoa, single origin cocoa, chocolate making beans, Ivory Coast cocoa, organic cocoa beans'
         },
         'raw-cocoa-nibs': {
             title: 'Raw Cocoa Nibs | Organic Superfood | Antioxidant-Rich | SWB Enterprises',
-            description: 'Premium raw cocoa nibs from Peru, Ecuador, and Madagascar. 100% pure, unroasted cocoa superfood packed with antioxidants. Perfect for smoothies, baking, and health foods. Vacuum-sealed freshness.',
-            keywords: 'raw cocoa nibs, organic cocoa nibs, superfood cocoa, antioxidant cocoa, unroasted cocoa, cocoa nibs bulk, Peru cocoa nibs, health food ingredient, crunchy cocoa'
+            description: 'Premium raw cocoa nibs from Ivory Coast. 100% pure, unroasted cocoa superfood packed with antioxidants. Perfect for smoothies, baking, and health foods. Vacuum-sealed freshness.',
+            keywords: 'raw cocoa nibs, organic cocoa nibs, superfood cocoa, antioxidant cocoa, unroasted cocoa, cocoa nibs bulk, Ivory Coast cocoa nibs, health food ingredient, crunchy cocoa'
         },
         'cocoa-husk': {
             title: 'Cocoa Husk for Tea & Infusions | Sustainable Cocoa By-Product | SWB',
-            description: 'Premium food-grade cocoa husk from Ghana, Ivory Coast, and Ecuador. Ideal for cocoa tea brewing, natural infusions, and sustainable applications. Aromatic, eco-friendly, zero-waste ingredient.',
+            description: 'Premium food-grade cocoa husk from Ivory Coast. Ideal for cocoa tea brewing, natural infusions, and sustainable applications. Aromatic, eco-friendly, zero-waste ingredient.',
             keywords: 'cocoa husk, cocoa shell tea, cocoa tea, sustainable cocoa, eco-friendly cocoa, cocoa infusion, cocoa by-product, zero waste cocoa, natural tea'
         }
     }

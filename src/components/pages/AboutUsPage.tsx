@@ -78,7 +78,7 @@ const AboutUsPage = () => {
 
     const timeline = [
         { year: '1998', title: 'The Beginning', desc: 'Founded with a vision to bridge the gap between cocoa farmers and chocolate artisans worldwide.' },
-        { year: '2005', title: 'Ethical Sourcing', desc: 'Established our first direct trade partnerships with smallholder farms in Ghana and Ecuador.' },
+        { year: '2005', title: 'Ethical Sourcing', desc: 'Established our first direct trade partnerships with smallholder farms in Ivory Coast.' },
         { year: '2012', title: 'Global Expansion', desc: 'Opened processing facilities across three continents, maintaining quality at scale.' },
         { year: '2018', title: 'Sustainability Focus', desc: 'Launched comprehensive sustainability programs supporting farmer communities and environmental conservation.' },
         { year: '2023', title: 'Innovation Leader', desc: 'Pioneered new processing techniques that preserve the natural complexity of single-origin cocoa.' },
