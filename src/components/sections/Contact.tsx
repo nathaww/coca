@@ -2,6 +2,12 @@ import Button from "../ui/Button"
 import GetQuote from "./GetQuote"
 
 const Contact = () => {
+    const handleContactUs = () => {
+        const element = document.getElementById('get-quote')
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
     return (
         <section id="contact" className="w-full pt-16">
             {/* Hero with background image and overlay card */}
@@ -11,7 +17,7 @@ const Contact = () => {
                     style={{ backgroundImage: "url('/images/5.jpg')" }}
                 />
 
-                <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/3 top-8 sm:top-12 lg:top-16 w-[90%] sm:w-3/4 lg:w-[1240px] h-[363px] bg-secondary rounded-xl p-8 lg:p-12 shadow-lg">
+                <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/3 top-8 sm:top-12 lg:top-16 w-[90%] sm:w-3/4 xl:w-[1240px] h-[363px] bg-secondary rounded-xl p-8 lg:p-12 shadow-lg">
                     <div className="relative w-full h-full flex flex-col justify-center">
 
                         <img src="/images/contact.svg" alt="contact illustration" className="hidden sm:block absolute object-contain z-20 bottom-0 left-0 h-[223px]" />
@@ -20,7 +26,11 @@ const Contact = () => {
                         <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white text-center">Let's Talk Cocoa</h2>
                         <p className="text-sm md:text-base text-white/90 text-center mt-3 max-w-lg mx-auto">Whether you're a chocolatier, supplier, or enthusiast, we're here to help you source the best. Let's connect.</p>
                         <div className="flex justify-center mt-6">
-                            <Button text="Contact us" className="bg-primary rounded-lg" />
+                            <Button 
+                                text="Contact us" 
+                                className="bg-primary rounded-lg"
+                                onClick={handleContactUs}
+                            />
                         </div>
                     </div>
                 </div>
@@ -35,8 +45,8 @@ const Contact = () => {
                     <h3 className="text-4xl md:text-[100px] font-extrabold">Stay in the Cocoa Loop</h3>
                     <p className="mt-4 text-sm md:text-[20px] text-white">Be the first to hear about our new harvests, sourcing stories, and product launches. No spam just pure cocoa insights.</p>
 
-                    <form className="mt-8 flex items-center justify-between gap-4 bg-white rounded-full px-2">
-                        <input aria-label="Email" type="email" placeholder="Enter your email to stay in the loop." className="w-80 sm:w-[480px] rounded-full px-3 py-6 text-blue-900" />
+                    <form className="mt-8 flex flex-col items-center justify-between gap-4 lg:bg-white sm:rounded-full sm:px-2">
+                        <input aria-label="Email" type="email" placeholder="Enter your email to stay in the loop." className="w-full bg-white lg:bg-transparent text-sm md:text-base sm:w-[480px] rounded-full px-3 py-6 text-blue-900" />
                         <Button text="Subscribe for updates" className="bg-primary px-5 py-3 rounded-full font-semibold" />
                     </form>
 

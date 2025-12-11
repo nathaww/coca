@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import Button from '../ui/Button'
 
 const NavBar = () => {
     const [open, setOpen] = useState(false)
+    const navigate = useNavigate()
+    const location = useLocation()
 
     // prevent body scroll when mobile sidebar is open
     useEffect(() => {
@@ -16,6 +19,26 @@ const NavBar = () => {
             document.body.style.overflow = ''
         }
     }, [open])
+
+    const handleNavigation = (href: string) => {
+        if (href.startsWith('#')) {
+            // Handle hash navigation
+            if (location.pathname !== '/') {
+                navigate('/')
+                setTimeout(() => {
+                    const element = document.getElementById(href.substring(1))
+                    if (element) element.scrollIntoView({ behavior: 'smooth' })
+                }, 100)
+            } else {
+                const element = document.getElementById(href.substring(1))
+                if (element) element.scrollIntoView({ behavior: 'smooth' })
+            }
+        } else {
+            // Handle route navigation
+            navigate(href)
+        }
+        setOpen(false) // Close mobile menu
+    }
 
   const links = [
     { label: 'Home', href: '/' },
@@ -32,14 +55,19 @@ const NavBar = () => {
             <ul className="sm:text-lg text-white flex-row gap-8 items-center hidden sm:flex">
                 {links.map((l) => (
                     <li key={l.href}>
-                        <a href={l.href} className="hover:underline">{l.label}</a>
+                        <button 
+                            onClick={() => handleNavigation(l.href)} 
+                            className="hover:underline"
+                        >
+                            {l.label}
+                        </button>
                     </li>
                 ))}
 
                 <li>
-                    <a href="#get-quote">
+                    <button onClick={() => handleNavigation('#get-quote')}>
                         <Button text="Get A Quote" className="border border-white text-white p-4 rounded-lg" />
-                    </a>
+                    </button>
                 </li>
             </ul>
 
@@ -87,20 +115,19 @@ const NavBar = () => {
                         <ul className="flex flex-col gap-6">
                             {links.map((l) => (
                                 <li key={l.href}>
-                                    <a
-                                        href={l.href}
-                                        onClick={() => setOpen(false)}
-                                        className="text-lg font-medium"
+                                    <button
+                                        onClick={() => handleNavigation(l.href)}
+                                        className="text-lg font-medium text-left"
                                     >
                                         {l.label}
-                                    </a>
+                                    </button>
                                 </li>
                             ))}
 
                             <li>
-                                <a href="#get-quote" onClick={() => setOpen(false)}>
+                                <button onClick={() => handleNavigation('#get-quote')}>
                                     <Button text="Get A Quote" className="w-full text-center" />
-                                </a>
+                                </button>
                             </li>
                         </ul>
 

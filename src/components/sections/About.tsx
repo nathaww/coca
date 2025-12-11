@@ -1,7 +1,9 @@
 import Blur from "../ui/Blur"
-import Button from "../ui/Button"
+import { useNavigate } from 'react-router-dom'
+import Button from '../ui/Button'
 
 const About = () => {
+    const navigate = useNavigate()
     return (
         <section id="about" className="py-4 sm:py-16 px-4 bg-white relative w-screen overflow-x-clip">
             <Blur className="hidden sm:flex absolute top-0 -left-[55%] bg-secondary" />
@@ -65,7 +67,11 @@ const About = () => {
                             cultivation. We focus on building long-term partnerships with these growers to ensure every bean we deliver
                             is traceable, high-quality, and responsibly sourced.
                         </p>
-                        <Button text="Read More About us" className="bg-primary text-white px-6 py-3 rounded-lg w-max font-semibold" />
+                        <Button 
+                            text="Read More About us" 
+                            className="bg-primary text-white px-6 py-3 rounded-lg w-max font-semibold"
+                            onClick={() => navigate('/about')}
+                        />
                     </div>
                 </div>
             </div>

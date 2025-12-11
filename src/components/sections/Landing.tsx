@@ -12,12 +12,22 @@ import 'swiper/css/effect-fade'
 import Button from '../ui/Button'
 
 const Landing = () => {
+    const handleExploreProducts = () => {
+        const element = document.getElementById('products')
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
   return (
     <div id="home" className="h-dvh w-screen relative">
         <div className='absolute bg-black/60 w-screen z-10 h-dvh flex flex-col items-center justify-center text-white px-4'>
             <h1 className='text-5xl sm:text-8xl font-extrabold mb-4'>Pure Cocoa. <br className='flex sm:hidden' /> Pure Origin.</h1>
             <p className='sm:text-xl text-center'>Sourced with integrity. Delivered with care. Experience cocoa in its truest form.</p>
-            <Button text='Explore Our Products' className='text-white border rounded-lg border-white mt-8'/>
+            <Button 
+                text='Explore Our Products' 
+                className='text-white border rounded-lg border-white mt-8'
+                onClick={handleExploreProducts}
+            />
         </div>
         <img src="/images/cocoa.svg" alt="Cocoa illustration" className="smooth-loop hidden sm:block absolute right-28 -bottom-[30%] w-[700px] object-contain z-10" />
       <Swiper
