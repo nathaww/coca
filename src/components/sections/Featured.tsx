@@ -1,6 +1,5 @@
 import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import Button from '../ui/Button'
 import Circle from '../ui/Circle'
 
 const Featured = () => {
@@ -37,17 +36,13 @@ const Featured = () => {
                             <div className="flex justify-end w-full 2xl:w-auto">
                                 <Link to={`/products/${p.slug}`}>
                                     <button className="bg-secondary text-white p-3 cursor-pointer rounded-lg w-full 2xl:w-max hover:bg-secondary/90 transition-colors">
-                                      <ArrowUpRight/>
+                                        <ArrowUpRight />
                                     </button>
                                 </Link>
                             </div>
                         </div>
                     </article>
                 ))}
-            </div>
-
-            <div className='mt-14 lg:mt-24 mx-auto flex justify-center items-center'>
-                <Button text="View All Products" className="bg-primary mt-10 rounded-lg" />
             </div>
 
         </section>
