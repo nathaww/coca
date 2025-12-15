@@ -69,7 +69,7 @@ const About = () => {
                         </p>
                         <Button 
                             text="Read More About us" 
-                            className="bg-primary text-white px-6 py-3 rounded-lg w-max font-semibold"
+                            className="bg-primary text-white px-6 py-3 rounded-lg w-full lg:w-max font-semibold"
                             onClick={() => navigate('/about')}
                         />
                     </div>

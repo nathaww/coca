@@ -47,7 +47,7 @@ const Contact = () => {
 
                     <form className="mt-8 flex flex-col lg:flex-row items-center justify-between gap-4 lg:bg-white sm:rounded-full sm:px-2">
                         <input aria-label="Email" type="email" placeholder="Enter your email to stay in the loop." className="w-full bg-white lg:bg-transparent text-sm md:text-base sm:w-[480px] rounded-full px-3 py-6 text-blue-900" />
-                        <Button text="Subscribe for updates" className="bg-primary px-5 py-3 rounded-full font-semibold" />
+                        <Button text="Subscribe for updates" className="bg-primary px-5 py-3 rounded-full font-semibold border border-white lg:border-none" />
                     </form>
 
                     <div className="mt-20">

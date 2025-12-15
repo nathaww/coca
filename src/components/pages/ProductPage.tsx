@@ -321,7 +321,7 @@ const ProductPage = () => {
     const currentSEO = seoData[product.id as keyof typeof seoData]
 
     return (
-        <div className="min-h-screen bg-primary pt-42 w-full">
+        <div className="min-h-screen bg-primary pt-28 lg:pt-42 w-full">
             <SEO 
                 title={currentSEO.title}
                 description={currentSEO.description}
@@ -331,7 +331,7 @@ const ProductPage = () => {
                 canonicalUrl={`https://yourdomain.com/products/${product.id}`}
             />
             {/* Breadcrumb */}
-            <div className="max-w-6xl mx-auto px-4">
+            <div className="max-w-6xl mx-auto px-4 mb-6">
                 <Link to="/#products" className="inline-flex items-center gap-2 text-secondary hover:text-white transition-colors">
                     <ArrowLeft className="w-4 h-4" />
                     <span className="font-medium">Back to Products</span>
@@ -352,7 +352,7 @@ const ProductPage = () => {
                             </div>
                             <p className="text-lg text-gray-200 mb-6 leading-relaxed">{product.longDescription}</p>
                             <div className="flex flex-wrap gap-4">
-                                <Button text="Request Quote" className="bg-primary rounded-lg" />
+                                <Button text="Request Quote" className="bg-primary rounded-lg w-full lg:w-max border-white border" />
                             </div>
                         </div>
                         <div className="relative">
@@ -467,7 +467,7 @@ const ProductPage = () => {
                         Contact our team to discuss quantities, pricing, and delivery options for your specific needs.
                     </p>
                     {/* Get Quote CTA (works with BrowserRouter) */}
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center w-full">
                         <button
                             onClick={() => {
                                 if (location.pathname === '/') {
@@ -481,9 +481,9 @@ const ProductPage = () => {
                                     }, 150)
                                 }
                             }}
-                            className="border-white border rounded-lg"
+                            className="w-full lg:w-max"
                         >
-                            <Button text="Get a Quote" className="border-white border rounded-lg" />
+                            <Button text="Get a Quote" className="border-white border rounded-lg w-full lg:w-max" />
                         </button>
                     </div>
                 </div>

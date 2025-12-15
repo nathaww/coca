@@ -49,10 +49,10 @@ const NavBar = () => {
 
   return (
         <div className="absolute top-0 z-50 max-w-[1440px] w-full flex items-center justify-between p-4">
-            <img src="/images/logo.svg" alt="Cocoa Logo" className="w-28 sm:w-[251px] sm:h-[100px] object-contain z-50" />
+            <img src="/images/logo.svg" alt="Cocoa Logo" className="w-28 lg:w-[251px] lg:h-[100px] object-contain z-50" />
 
             {/* Desktop links */}
-            <ul className="sm:text-lg text-white flex-row gap-8 items-center hidden sm:flex">
+            <ul className="sm:text-lg text-white flex-row gap-8 items-center hidden lg:flex">
                 {links.map((l) => (
                     <li key={l.href}>
                         <button 
@@ -72,7 +72,7 @@ const NavBar = () => {
             </ul>
 
             {/* Mobile hamburger */}
-            <div className="sm:hidden z-50">
+            <div className="lg:hidden z-50">
                 <button
                     aria-label="Open menu"
                     aria-expanded={open}
