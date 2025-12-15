@@ -1,12 +1,9 @@
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowLeft, Award, Check, Leaf, Package, ShieldCheck } from 'lucide-react'
 import { useEffect } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import SEO from '../lib/SEO'
 import Button from '../ui/Button'
 
-gsap.registerPlugin(ScrollTrigger)
 
 interface ProductData {
     id: string
