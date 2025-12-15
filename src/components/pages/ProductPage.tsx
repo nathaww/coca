@@ -1,11 +1,12 @@
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowLeft, Award, Check, Leaf, Package, ShieldCheck } from 'lucide-react'
-import { useEffect, useRef } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useRef } from 'react'
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import SEO from '../lib/SEO'
 import Button from '../ui/Button'
-import { useNavigate, useLocation } from 'react-router-dom'
+
+gsap.registerPlugin(ScrollTrigger)
 
 interface ProductData {
     id: string
@@ -230,62 +231,16 @@ const ProductPage = () => {
     const { productId } = useParams<{ productId: string }>()
     const heroRef = useRef<HTMLDivElement | null>(null)
     const featuresRef = useRef<HTMLDivElement | null>(null)
-    const galleryRef = useRef<HTMLDivElement | null>(null)
 
     const product = productId ? productsData[productId] : null
     const navigate = useNavigate()
     const location = useLocation()
 
-    useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger)
-
-        const ctx = gsap.context(() => {
-            // Hero animation
-            gsap.from(heroRef.current?.children || [], {
-                opacity: 0,
-                y: 50,
-                stagger: 0.15,
-                duration: 1,
-                ease: 'power3.out',
-            })
-
-            // Features animation
-            gsap.from('.feature-card', {
-                opacity: 0,
-                y: 40,
-                stagger: 0.1,
-                duration: 0.7,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: featuresRef.current,
-                    start: 'top 80%',
-                }
-            })
-
-            // Gallery animation
-            gsap.from('.gallery-item', {
-                opacity: 0,
-                scale: 0.9,
-                stagger: 0.1,
-                duration: 0.6,
-                ease: 'back.out(1.3)',
-                scrollTrigger: {
-                    trigger: galleryRef.current,
-                    start: 'top 85%',
-                }
-            })
-        })
-
-        return () => {
-            ctx.revert()
-            ScrollTrigger.getAll().forEach(s => s.kill())
-        }
-    }, [productId])
 
     if (!product) {
         return (
             <div className="min-h-screen flex items-center justify-center">
-                <SEO 
+                <SEO
                     title="Product Not Found | SWB Enterprises"
                     description="The requested cocoa product was not found. Browse our range of premium cocoa beans, raw nibs, and cocoa husk."
                     canonicalUrl="https://yourdomain.com/"
@@ -322,7 +277,7 @@ const ProductPage = () => {
 
     return (
         <div className="min-h-screen bg-primary pt-28 lg:pt-42 w-full">
-            <SEO 
+            <SEO
                 title={currentSEO.title}
                 description={currentSEO.description}
                 keywords={currentSEO.keywords}

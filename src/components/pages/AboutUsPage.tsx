@@ -3,6 +3,8 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Button from '../ui/Button'
 import SEO from '../lib/SEO'
+import { useGSAP } from '@gsap/react'
+gsap.registerPlugin(ScrollTrigger)
 
 const AboutUsPage = () => {
     const heroRef = useRef<HTMLDivElement | null>(null)
@@ -11,63 +13,58 @@ const AboutUsPage = () => {
     const teamRef = useRef<HTMLDivElement | null>(null)
 
     useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger)
+        window.scrollTo(0, 0)
+    }, [])
 
-        const ctx = gsap.context(() => {
-            // Hero section animation
-            gsap.from(heroRef.current?.children || [], {
-                opacity: 0,
-                y: 60,
-                stagger: 0.2,
-                duration: 1,
-                ease: 'power3.out',
-            })
-
-            // Timeline items animation
-            gsap.from('.timeline-item', {
-                opacity: 0,
-                x: -50,
-                stagger: 0.2,
-                duration: 0.8,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: timelineRef.current,
-                    start: 'top 80%',
-                }
-            })
-
-            // Stats animation
-            gsap.from('.stat-item', {
-                opacity: 0,
-                scale: 0.8,
-                stagger: 0.15,
-                duration: 0.6,
-                ease: 'back.out(1.7)',
-                scrollTrigger: {
-                    trigger: statsRef.current,
-                    start: 'top 85%',
-                }
-            })
-
-            // Team cards animation
-            gsap.from('.team-card', {
-                opacity: 0,
-                y: 40,
-                stagger: 0.1,
-                duration: 0.7,
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: teamRef.current,
-                    start: 'top 85%',
-                }
-            })
+    useGSAP(() => {
+        gsap.from(heroRef.current?.children || [], {
+            opacity: 0,
+            y: 60,
+            stagger: 0.2,
+            duration: 1,
+            ease: 'power3.out',
         })
 
-        return () => {
-            ctx.revert()
-            ScrollTrigger.getAll().forEach(s => s.kill())
-        }
-    }, [])
+        // Timeline items animation
+        gsap.from('.timeline-item', {
+            opacity: 0,
+            x: -50,
+            stagger: 0.2,
+            duration: 0.8,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: timelineRef.current,
+                start: 'top 80%',
+            }
+        })
+
+        // Stats animation
+        gsap.from('.stat-item', {
+            opacity: 0,
+            scale: 0.8,
+            stagger: 0.15,
+            duration: 0.6,
+            ease: 'back.out(1.7)',
+            scrollTrigger: {
+                trigger: statsRef.current,
+                start: 'top 85%',
+            }
+        })
+
+        // Team cards animation
+        gsap.from('.team-card', {
+            opacity: 0,
+            y: 40,
+            stagger: 0.1,
+            duration: 0.7,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: teamRef.current,
+                start: 'top 85%',
+            }
+        })
+
+    })
 
     const stats = [
         { number: '25+', label: 'Years of Experience', desc: 'Decades of expertise in cocoa sourcing' },
@@ -86,7 +83,7 @@ const AboutUsPage = () => {
 
     return (
         <div className="min-h-screen bg-white w-full">
-            <SEO 
+            <SEO
                 title="About Us | Premium Cocoa Supplier Since 1998 | SWB Enterprises"
                 description="Learn about SWB Enterprises' 25+ years of excellence in cocoa sourcing. We partner with 150+ farms globally, delivering premium single-origin cocoa with 99.9% quality assurance."
                 keywords="about cocoa supplier, ethical cocoa sourcing, sustainable cocoa, cocoa company history, fair trade cocoa beans, organic cocoa supplier"
@@ -101,7 +98,7 @@ const AboutUsPage = () => {
                         <span className="text-secondary">Bean by Bean</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-gray-100 mb-8 max-w-4xl mx-auto leading-relaxed">
-                        For over two decades, we've been more than just a cocoa supplier. We're custodians of tradition, 
+                        For over two decades, we've been more than just a cocoa supplier. We're custodians of tradition,
                         champions of sustainability, and partners in your creative journey.
                     </p>
                 </div>
@@ -140,7 +137,7 @@ const AboutUsPage = () => {
                     <div className="relative">
                         {/* Timeline line */}
                         <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-secondary/30 hidden md:block"></div>
-                        
+
                         {timeline.map((item, index) => (
                             <div key={index} className="timeline-item relative flex flex-col md:flex-row gap-6 mb-12">
                                 <div className="md:w-32 shrink-0">
@@ -202,7 +199,7 @@ const AboutUsPage = () => {
                         Ready to Work Together?
                     </h2>
                     <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                        Join hundreds of chocolatiers, confectioners, and food manufacturers who trust us 
+                        Join hundreds of chocolatiers, confectioners, and food manufacturers who trust us
                         for their premium cocoa needs.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
