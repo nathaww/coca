@@ -1,7 +1,7 @@
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowLeft, Award, Check, Leaf, Package, ShieldCheck } from 'lucide-react'
-import { useRef } from 'react'
+import { useEffect } from 'react'
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 import SEO from '../lib/SEO'
 import Button from '../ui/Button'
@@ -229,12 +229,14 @@ const productsData: Record<string, ProductData> = {
 
 const ProductPage = () => {
     const { productId } = useParams<{ productId: string }>()
-    const heroRef = useRef<HTMLDivElement | null>(null)
-    const featuresRef = useRef<HTMLDivElement | null>(null)
-
     const product = productId ? productsData[productId] : null
     const navigate = useNavigate()
     const location = useLocation()
+
+    // Scroll to top when component mounts or productId changes
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [productId])
 
 
     if (!product) {
@@ -296,7 +298,7 @@ const ProductPage = () => {
             {/* Hero Section */}
             <section className="relative pb-6 px-4 overflow-hidden">
 
-                <div ref={heroRef} className="max-w-6xl mx-auto relative z-10">
+                <div className="max-w-6xl mx-auto relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div>
                             <div className="flex items-center gap-4 mb-6">
@@ -337,7 +339,7 @@ const ProductPage = () => {
             </section>
 
             {/* Features Grid */}
-            <section ref={featuresRef} className="py-16 px-4">
+            <section className="py-16 px-4">
                 <div className="max-w-6xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-12 text-center">Product Features</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
