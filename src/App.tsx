@@ -1,5 +1,6 @@
 import './App.css'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import NavBar from './components/layout/NavBar'
 import Footer from './components/layout/Footer'
 import Landing from './components/sections/Landing'
@@ -29,6 +30,17 @@ function Home() {
 }
 
 function App() {
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1))
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }, [location])
+
   return (
     <div className='max-w-[1920px] flex flex-col items-center justify-center mx-auto'>
       <NavBar />

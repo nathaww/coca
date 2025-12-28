@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Button from '../ui/Button'
 import SEO from '../lib/SEO'
 import { useGSAP } from '@gsap/react'
+import { useNavigate } from 'react-router-dom'
 gsap.registerPlugin(ScrollTrigger)
 
 const AboutUsPage = () => {
@@ -11,6 +12,7 @@ const AboutUsPage = () => {
     const timelineRef = useRef<HTMLDivElement | null>(null)
     const statsRef = useRef<HTMLDivElement | null>(null)
     const teamRef = useRef<HTMLDivElement | null>(null)
+    const navigate = useNavigate()
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -203,7 +205,7 @@ const AboutUsPage = () => {
                         for their premium cocoa needs.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Button text="Get Started" className="bg-primary rounded-lg" />
+                        <Button text="Get Started" className="bg-primary rounded-lg" onClick={() => navigate('/#products')} />
                     </div>
                 </div>
             </section>

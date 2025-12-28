@@ -306,7 +306,7 @@ const ProductPage = () => {
                             </div>
                             <p className="text-lg text-gray-200 mb-6 leading-relaxed">{product.longDescription}</p>
                             <div className="flex flex-wrap gap-4">
-                                <Button text="Request Quote" className="bg-primary rounded-lg w-full lg:w-max border-white border" />
+                                <Button text="Request Quote" className="bg-primary rounded-lg w-full lg:w-max border-white border" onClick={() => navigate('/#get-quote')} />
                             </div>
                         </div>
                         <div className="relative">
